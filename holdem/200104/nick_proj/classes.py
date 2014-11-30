@@ -1,6 +1,6 @@
 class Hand:
     """Defines a class for a hand. All of the information comes from 
-       a row in in the hdb file"""
+       a row in the hdb file"""
     def __init__(self,timestamp,dealer,game_num,
                  num_players_dealt_cards,num_players_flop,
                  pot_size_flop,num_players_turn,pot_size_turn,
@@ -19,6 +19,11 @@ class Hand:
         self.num_players_showdn = num_players_showdn
         self.pot_size_showdn = pot_size_showdn
         self.board = board
+
+class WinningHand(Hand):
+    """Defines a class for a hand. All of the information comes from
+       a row in the hdb file. Should only be used to store data regarding
+       hands that won!""" 
 
 class HandRoster:
     """Defines a class for a hand roster. All of the information comes

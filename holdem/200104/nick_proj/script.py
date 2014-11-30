@@ -54,3 +54,18 @@ for pdb_filename in pdb_filenames:
     pdb_file.close()
 pdb_filenames.close()
 
+for elt in hands:
+    print "Hand object"
+    pprint (vars(hands[elt]))
+    print ""
+    break
+for elt in hand_rosters:
+    print "Hand Roster object"
+    pprint (vars(hand_rosters[elt]))
+    print ""
+    break
+for elt in rounds:
+    print "Round object"
+    pprint (vars(rounds[elt]))
+    print ""
+    break
