@@ -65,3 +65,35 @@ column 9        player's bankroll at start of hand
 column 10       total action of player during hand
 column 11       amount of pot won by player
 column 12+      pocket cards of player (if revealed at showdown)
+
+******************************************************************************
+******************************************************************************
+
+In English, the database entry says that 8 players are at the table; Marzon
+makes a small blind (B), spiney makes a big blind (B), doublebag calls (c),
+neoncap folds (f), maurer folds (f), andrea calls (c), zorak raises (r),
+justin calls (c), Marzon calls (c), spiney calls (c), and finally andrea calls
+(c) [no respect for zorak].  The pot is $600 and we have 6 players.  The flop
+comes 3s Jc Qd, Marzon bets (b), spiney calls (c), doublebag raises (r) with
+two pair, etc.  On the turn, Marzon and spiney check (k) to double bag, who
+bets, etc.  On the river, justin catches an ace to make aces-up, raises and
+wins the $2400 pot.  Note that we don't know the cards of those who folded
+before the showdown.  Also note that the format does not record exact bet
+amounts in pot-limit or no-limit, though they can often be inferred from the
+total pot size after each round.
+
+******************************************************************************
+******************************************************************************
+
+The betting action is encoded with a single character for each action:
+
+        -       no action; player is no longer contesting pot
+        B       blind bet
+        f       fold
+        k       check
+        b       bet
+        c       call
+        r       raise
+        A       all-in
+        Q       quits game
+        K       kicked from game
