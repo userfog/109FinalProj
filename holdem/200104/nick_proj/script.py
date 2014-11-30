@@ -35,9 +35,9 @@ for line in hand_roster_file:
 hand_roster_file.close()
 
 # Create a dictionary of rounds
-# (key,value) = (timestamp + player_name,Round)
+# (key,value) = (timestamp,[data for each player at table])
 # Note: Reason for the try/except statements is because some of the data
-# is inconsistent; this data is just skipped
+# is inconsistent; that data is just skipped
 rounds = {}
 pdb_filenames = open("pdb_filenames.txt")
 for pdb_filename in pdb_filenames:
@@ -48,24 +48,26 @@ for pdb_filename in pdb_filenames:
         try:
             round = Round(m[0],int(m[1]),int(m[2]),int(m[3]),m[4],m[5],
                           m[6],m[7],int(m[8]),int(m[9]),int(m[10]),m[11:])
-            rounds[str(round.timestamp) + round.player] = round
+            if round.timestamp in rounds:
+                rounds[round.timestamp].append(round)
+            else:
+                rounds[round.timestamp] = [round]
         except:
             continue
     pdb_file.close()
 pdb_filenames.close()
 
-for elt in hands:
-    print "Hand object"
-    pprint (vars(hands[elt]))
-    print ""
-    break
-for elt in hand_rosters:
-    print "Hand Roster object"
-    pprint (vars(hand_rosters[elt]))
-    print ""
-    break
-for elt in rounds:
-    print "Round object"
-    pprint (vars(rounds[elt]))
-    print ""
-    break
+# Create a dictionary of winning rounds
+# At the end, we filter to get only rounds where we know what cards
+# the player won the round with
+winning_rounds = {}
+for ts in rounds:
+    for round in rounds[ts]:
+        if round.pot_amount_won > 0:
+            winning_rounds[ts] = round
+            if ts in hands:            
+                winning_rounds[ts].board = hands[ts].board
+            break
+winning_rounds = {r: winning_rounds[r] for r in winning_rounds if winning_rounds[r].showdn_cards != []}
+#for round in winning_rounds:
+    #pprint (vars(winning_rounds[round]))

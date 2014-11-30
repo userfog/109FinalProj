@@ -20,11 +20,6 @@ class Hand:
         self.pot_size_showdn = pot_size_showdn
         self.board = board
 
-class WinningHand(Hand):
-    """Defines a class for a hand. All of the information comes from
-       a row in the hdb file. Should only be used to store data regarding
-       hands that won!""" 
-
 class HandRoster:
     """Defines a class for a hand roster. All of the information comes
        from a single row in hroster; essentially shows who played for
