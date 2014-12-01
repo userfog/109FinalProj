@@ -4,13 +4,13 @@ from classes import HandRoster
 from classes import Round
 from pprint import pprint
 
-# paths
+# paths to files
 HANDS_DATA = "../hdb"
 ROSTER_DATA = "../hroster"
 PLAYER_DATA = "../pdb/"
 
-# Create dictionary of all hands. Note: can print an object using
-# "pprint (vars(hand))".
+# Create dictionary of all hands. 
+# Can print an object using "pprint (vars(hand))".
 # (key,value) = (timestamp,Hand)
 hands = {}
 hands_file = open(HANDS_DATA)
@@ -37,7 +37,7 @@ hand_roster_file.close()
 # Create a dictionary of rounds
 # (key,value) = (timestamp,[data for each player at table])
 # Note: Reason for the try/except statements is because some of the data
-# is inconsistent; that data is just skipped
+# is inconsistent; inconsistent data is skipped
 rounds = {}
 pdb_filenames = open("pdb_filenames.txt")
 for pdb_filename in pdb_filenames:
@@ -69,5 +69,5 @@ for ts in rounds:
                 winning_rounds[ts].board = hands[ts].board
             break
 winning_rounds = {r: winning_rounds[r] for r in winning_rounds if winning_rounds[r].showdn_cards != []}
-#for round in winning_rounds:
-    #pprint (vars(winning_rounds[round]))
+for round in winning_rounds:
+    pprint (vars(winning_rounds[round]))
