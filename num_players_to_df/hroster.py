@@ -39,13 +39,19 @@ def convert_pdb_to_csv(f):
     return out
 
 def player_to_df(name):
-    with open(name_to_file(name), "r") as plyr_file:
-        c = convert_pdb_to_csv(plyr_file)
-        return pd.read_csv(io.BytesIO(c.getvalue()), names=player_columns)
+    try:
+        with open(name_to_file(name), "r") as plyr_file:
+            c = convert_pdb_to_csv(plyr_file)
+            return pd.read_csv(io.BytesIO(c.getvalue()), names=player_columns)
+    except:
+        return -1
 
 def player_hand(name, ts):
     plyr_df = player_to_df(name)
+    if type(plyr_df) == int and plyr_df == -1:
+        return plyr_df
     plyr_df = plyr_df[plyr_df.timestamp == ts]
+    
     if len(plyr_df) == 0 and DEBUG:
         fp.write("Name: " + name + " " + "Timestamp: " + str(ts) + "\n")
     return plyr_df
@@ -58,7 +64,14 @@ def hand_from_roster(row):
     cols = ["name" + str(i) for i in xrange(1,num+1)]
     for idx, name in enumerate(cols):
         player = row[name]
-        player_dataframes = player_dataframes.append(player_hand(player, ts))
+        p = player_hand(player, ts)
+
+        if type(p) == int and p == -1:
+            if DEBUG:
+                fp.write("Hand From Roster: Name: " + name + "Timestamp: " + str(ts) + "\n")
+            return pd.DataFrame(columns=player_columns)
+
+        player_dataframes = player_dataframes.append(p)
     return player_dataframes
 
 
@@ -75,9 +88,9 @@ def main():
     hroster_df = None
     with open(DATA_HROSTER, "r") as roster:
         hroster_df = pd.read_csv(roster, names=hroster_columns, delim_whitespace=True)
-    for i in xrange(2, 11):
+    for i in xrange(7, 11):
         print "Num Players = " + str(i)
-        num_players_to_df(hroster_df, 2).to_csv(("num_players_%d.csv" % i)) 
+        num_players_to_df(hroster_df, i).to_csv(("num_players_%d.csv" % i)) 
 
 if __name__ == '__main__':
     main()
