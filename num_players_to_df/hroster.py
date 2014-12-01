@@ -17,14 +17,14 @@ DATA_HDB = DATA_ROOT + "hdb"
 DATA_PLAYER_ROOT = DATA_ROOT + "pdb/"
 INVALID_CARD = "XX"
 
-def name_to_file(name):
-    return DATA_PLAYER_ROOT + "pdb." + name
-
 # Columns
 hroster_columns = ["timestamp", "num_players", "name1", "name2", "name3", "name4", "name5", "name6", "name7", "name8", "name9", "name10"]
 hand_columns = ["timestamp", "dealer", "hand", "play", "flop", "turn", "river", "showdn", "board"]
 player_columns = ["player", "timestamp", "play", "pos", "prflop", "flop", "turn", "river", "bankroll", "action", "winnings", "c1", "c2"]
 
+
+def name_to_file(name):
+    return DATA_PLAYER_ROOT + "pdb." + name
 
 def convert_pdb_to_csv(f):
     out = sio.StringIO()
