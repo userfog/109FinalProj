@@ -65,10 +65,8 @@ def hand_from_roster(row):
 def num_players_to_df(df, num):
     target = df[df.num_players == num]
     l = len(target)
-    print l
     hands = pd.DataFrame(columns=player_columns)
     for idx, row in target.iterrows():
-        print idx
         hands = hands.append(hand_from_roster(row))
     return hands
 
@@ -77,7 +75,9 @@ def main():
     hroster_df = None
     with open(DATA_HROSTER, "r") as roster:
         hroster_df = pd.read_csv(roster, names=hroster_columns, delim_whitespace=True)
-    pp.pprint(num_players_to_df(hroster_df, 2).head())
+    for i in xrange(2, 11):
+        print "Num Players = " + str(i)
+        num_players_to_df(hroster_df, 2).to_csv(("num_players_%d.csv" % i)) 
 
 if __name__ == '__main__':
     main()

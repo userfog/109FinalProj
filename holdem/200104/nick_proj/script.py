@@ -4,7 +4,7 @@ from classes import HandRoster
 from classes import Round
 from pprint import pprint
 
-# paths
+# paths to files
 HANDS_DATA = "../hdb"
 ROSTER_DATA = "../hroster"
 PLAYER_DATA = "../pdb/"
