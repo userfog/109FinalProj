@@ -2619,7 +2619,8 @@ wstsider  988232336  9  7 f   -     Q     -         5216    0    0
 wstsider  988245833  8  8 f   -     -     -         5216    0    0 
 wstsider  988245897  9  7 f   -     -     -         5216    0    0 
 wstsider  988245947 10  6 f   -     -     -         5216    0    0 
-wstsider  988246037 10  6 cc  kc    kc    kr        5216   90  300wstsider  988255062  9  4 KQ  -     -     -         5296    0    0 
+wstsider  988246037 10  6 cc  kc    kc    kr        5216   90  300
+wstsider  988255062  9  4 KQ  -     -     -         5296    0    0 
 wstsider  988255249  9  6 f   -     -     -         5296    0    0 
 wstsider  988255317  9  5 c   k     f     -         5296   20    0 
 wstsider  988255347  9  4 f   -     -     -         5276    0    0 
