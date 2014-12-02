@@ -179,7 +179,6 @@ def main():
     for i in xrange(10, 11):
         print "Num Players = " + str(i)
         num_players_to_df(hroster_df, i).to_csv(("num_players_%d.csv" % i)) 
-
     # Success
     return 0
 
