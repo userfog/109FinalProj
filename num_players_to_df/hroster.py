@@ -94,9 +94,6 @@ def convert_pdb_to_csv(f):
             out.write(l + "\n")
     return out
 
-
-
-
 # Given a player name return DataFrame
 def player_to_df(name):
     try:
