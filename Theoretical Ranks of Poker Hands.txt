@@ -1,0 +1,10 @@
+No Fold’Em Ranking
+http://holdemtight.com/pgs/od/oddpgs/3-169holdemhands.htm
+
+Average Profit in Big Blinds
+http://www.tightpoker.com/poker_hands.html
+Same as above, but with position
+http://www.tightpoker.com/hands/ev_position.html
+
+Chen Formula:
+http://en.wikipedia.org/wiki/Texas_hold_'em_starting_hands
