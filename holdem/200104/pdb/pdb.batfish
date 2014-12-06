@@ -116,7 +116,7 @@ batfish   987873088  9  5 f   -     -     -          672    0    0
 batfish   987873143  9  4 c   k     kf    -          672   10    0 
 batfish   987873179  9  3 fQ  -     -     -          662    0    0 
 batfish   988244494 10  3 f   -     -     -         1071    0    0 
-batfish   988244584 10 batfish   988585647  9  6 c   rc    b     k         1056   60   66 Qs 2d
+batfish   988585647  9  6 c   rc    b     k         1056   60   66 Qs 2d
 batfish   988585740 10  5 c   f     -     -         1062   10    0 
 batfish   988585812 10  4 c   kc    k     b         1052   40  150 6h Th
 batfish   988585891 10  3 c   kc    kc    kc        1162   60    0 Tc Qh

@@ -1192,7 +1192,7 @@ Krahsloop 988242445 10  6 c   c     c     c         1898   60    0 As Tc
 Krahsloop 988242496 10  5 f   -     -     -         1838    0    0 
 Krahsloop 988242554 10  4 cc  kc    kc    kf        1838   50    0 
 Krahsloop 988242633 10  3 f   -     -     -         1788    0    0 
-Krahsloop 988242701 10  2 BKQ -  Krahsloop 988322061  3  3 f   -     -     -         1803    0    0 
+Krahsloop 988322061  3  3 f   -     -     -         1803    0    0 
 Krahsloop 988322065  3  2 Bk  k     k     b         1803   30   40 
 Krahsloop 988322079  3  1 Bc  k     kc    kf        1813   30    0 
 Krahsloop 988322111  3  3 c   b     -     -         1783   20   40 
