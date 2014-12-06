@@ -71,6 +71,8 @@ def get_data():
                     winning_rounds[ts].board = hands[ts].board
                 break
     winning_rounds = {r: winning_rounds[r] for r in winning_rounds if winning_rounds[r].showdn_cards != []}
-    #for round in winning_rounds:
-        #pprint (vars(winning_rounds[round]))
     return [hands, hand_rosters, rounds, winning_rounds]
+
+# Create dictionary of hands and their profit
+# (c=clover,h=heart,d=diamond,s=spade)
+# e.g. keys would be (2c,2h),(2c,2d),(2s,2h),(2s,2d),(2c,2s),(2h,2d)
